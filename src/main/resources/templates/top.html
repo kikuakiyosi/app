@@ -1,0 +1,36 @@
+<body>
+	<h3>登録されたアドレス一覧</h3>
+ 
+	<div th:if="${list!=null and !list.empty}">
+		<table class="table table-striped">
+			<thead>
+				<th>#</th>
+				<th>名前</th>
+				<th>メールアドレス</th>
+				<th>年齢</th>
+				<th>口座番号</th>
+				<th>口座残高</th>
+				<th role="action"></th>
+			</thead>
+			<tbody>
+				<tr class="align-middle" th:each="item, stat : ${list}" th:object="${item}">
+					<td th:text="${stat.count}"></td>
+					<td th:text="|*{name}"></td>
+					<td th:text="*{number}"></td>
+					<td th:text="*{price}"></td>
+					<td th:text="*{stock}"></td>
+				
+			
+<!--					<td>-->
+<!--						<a class="btn btn-warning" th:href="@{/address/edit/{id}(id=*{id})}">編集・削除</a>-->
+<!--					</td>-->
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div th:unless="${list!=null and !list.empty}">
+		<div class="alert alert-danger" role="alert">
+			データなし
+		</div>
+	</div>
+</body>
