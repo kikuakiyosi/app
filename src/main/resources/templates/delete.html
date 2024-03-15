@@ -1,6 +1,29 @@
-delete.html
- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>削除完了</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        padding: 50px;
+        background-color: #343a40;
+        color: #ffffff;
+        text-align: center;
+    }
+    h4 {
+        margin-bottom: 30px;
+    }
+    .btn-warning {
+        background-color: #ffc107; 
+        border-color: #ffc107;
+        color: #212529; 
+    }
+</style>
+</head>
 <body>
-		<h4>削除が完了しました</h4>
-		<a class="btn btn-warning" th:href="@{/secret}">トップページへ</a>
+    <h4>削除をしました</h4>
+    <a class="btn btn-warning" th:href="@{/secret}">トップページに移動する</a>
 </body>
+</html>

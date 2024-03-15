@@ -45,8 +45,7 @@ public class SecurityConfig {
 		JdbcUserDetailsManager users = new JdbcUserDetailsManager(this.dataSource);
 		//ユーザー登録
 		users.createUser(makeUser("admin", "kanri", "ADMIN"));
-		users.createUser(makeUser("jun", "okada", "USER"));
-		users.createUser(makeUser("syu", "mitake", "USER"));
+		users.createUser(makeUser("kiku", "akiyosi", "USER"));
 		return users;
 	}
 

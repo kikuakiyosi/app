@@ -2,33 +2,57 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>商品登録</title>
-<form class="form py-4 needs-validation h-adr" method="post" th:action="@{/add/}" th:object="${productlist}">    
-	<div class="row mt-3">        
-		<label for="name" class="col-4 col-form-label text-end">商品名</label>
-		<div class="col-4">
-			<input type="text" class="form-control" name="name" id="name" required />
-			</div>
-		</div>    
-       
-		<label for="number" class="col-4 col-form-label text-end">商品番号</label>
-		<div class="col-4">
-			<input type="number" class="form-control" name="number" id="number" required />
-			</div>
-		</div>    
-      
-		<label for="price" class="col-4 col-form-label text-end">価格</label>
-		<div class="col-4">
-			<input type="number" class="form-control" name="price" id="price" required />
-			</div>
-		</div>    
-     
-		<label for="stock" class="col-4 col-form-label text-end">在庫数</label>
-		<div class="col-4">
-			<input type="number" class="form-control" name="stock" id="stock" required />
-			</div>
-		</div>
-		
-		<button type = submit>botton</button>    
-	</div>
-</form>
+<title>商品登録をします</title>
+<style>
+    /* カスタムスタイル: 背景のグラデーション */
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #87CEEB, #FFC0CB); /* 青からピンクのグラデーション */
+        height: 100vh; /* ビューポートの高さいっぱいにする */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* カスタムスタイル: フォームのスタイル */
+    .form-control {
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #495057;
+        background-color: transparent;
+        border: 2px solid black; /* 黒色の枠 */
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+    /* カスタムスタイル: ボタンのスタイル */
+    .btn-primary {
+        background-color: #FFC0CB; /* ピンク色 */
+        border-color: #FFC0CB; /* ピンク色 */
+    }
+</style>
+</head>
+<body>
+    <form method="post" th:action="@{/add/}" th:object="${productlist}">
+        <div class="form-group">
+            <label for="name">商品名</label>
+            <input type="text" class="form-control" name="name" id="name" required />
+        </div>
+        <div class="form-group">
+            <label for="number">商品番号</label>
+            <input type="number" class="form-control" name="number" id="number" required />
+        </div>
+        <div class="form-group">
+            <label for="price">価格</label>
+            <input type="number" class="form-control" name="price" id="price" required />
+        </div>
+        <div class="form-group">
+            <label for="stock">在庫数</label>
+            <input type="number" class="form-control" name="stock" id="stock" required />
+        </div>
+        <button type="submit" class="btn btn-primary">登録する</button>
+    </form>
+</body>
+</html>
